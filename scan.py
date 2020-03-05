@@ -245,7 +245,7 @@ def main():
 
     logging.info('NTLM vulnerabilities scanner by @YaronZi / Preempt - Based on impacket by SecureAuth')
 
-    parser = argparse.ArgumentParser(description="CVE-2019-1040 scanner - Connects over SMB and attempts to authenticate "
+    parser = argparse.ArgumentParser(description="NTLM scanner - Connects over SMB and attempts to authenticate "
                                                  "with invalid NTLM packets. If accepted, target is vulnerable to the scanned vulnerability")
 
     parser.add_argument('target', action='store', help='[[domain/]username[:password]@]<targetName or address>')

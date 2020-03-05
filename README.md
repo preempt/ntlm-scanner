@@ -13,6 +13,10 @@ More details in:
 Note most scans do not generate failed login attempts as the login information itself is valid. CVE-2019-1338 does generate
 a failed authentication and might cause an account lockout.
 
+Software is based on the following:
+- CVE-2019-1040 scanner (https://github.com/fox-it/cve-2019-1040-scanner) by Dirk-jan Mollema (@_dirkjan)
+- Impacket (https://github.com/SecureAuthCorp/impacket) by SecureAuth Corporation (https://www.secureauth.com/)
+
 # Usage
 The script requires a recent impacket version. Should work with both python 2 and 3 (Python 3 requires you to use impacket from git).
 

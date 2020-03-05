@@ -5,10 +5,10 @@ The script will establish a connection to the target host(s) and send
 an invalid NTLM authentication. If this is accepted, the host is vulnerable to
 the applied NTLM vulnerability and you can execute the relevant NTLM attack.
 More details in:
-https://www.preempt.com/blog/how-to-easily-bypass-epa-to-compromise-any-web-server-that-supports-windows-integrated-authentication/
-https://www.preempt.com/blog/your-session-key-is-my-session-key-how-to-retrieve-the-session-key-for-any-authentication/
-https://www.preempt.com/blog/drop-the-mic-cve-2019-1040/
-https://www.preempt.com/blog/drop-the-mic-2-active-directory-open-to-more-ntlm-attacks/
+- https://www.preempt.com/blog/how-to-easily-bypass-epa-to-compromise-any-web-server-that-supports-windows-integrated-authentication/
+- https://www.preempt.com/blog/your-session-key-is-my-session-key-how-to-retrieve-the-session-key-for-any-authentication/
+- https://www.preempt.com/blog/drop-the-mic-cve-2019-1040/
+- https://www.preempt.com/blog/drop-the-mic-2-active-directory-open-to-more-ntlm-attacks/
 
 Note most scans do not generate failed login attempts as the login information itself is valid. CVE-2019-1338 does generate
 a failed authentication and might cause an account lockout.

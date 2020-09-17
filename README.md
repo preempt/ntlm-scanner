@@ -1,3 +1,15 @@
+# New! Exploit Scan for CVE-2020-1472 (ZeroLogon)
+
+Scan DCs in your network to detect *actual* exploitation of CVE-2020-1472
+
+Examples:
+```
+python scan.py -vuln CVE-2020-1472 -target-file targets.txt
+python scan.py -vuln CVE-2020-1472 -target <DC name/IP>
+```
+
+Tool works by trying an empty password for DCs every minute. Since exploitation must set password to an empty one, unless reverted very quickly this will detect exploitation attempts if running during exploitation.
+
 # NTLM scanner
 
 Checks for various NTLM vulnerabilities over SMB.
@@ -22,19 +34,16 @@ The script requires a recent impacket version. Should work with both python 2 an
 
 ```
 [*] NTLM vulnerabilities scanner by @YaronZi / Preempt - Based on impacket by SecureAuth
-usage: scan.py [-h] [-target-file file] [-port [destination port]]
-               [-vuln scanned vulnerability] [-hashes LMHASH:NTHASH]
-               target
+usage: scan.py [-h] [-target TARGET] [-target-file file]
+               [-port [destination port]] [-vuln [scanned vulnerability]]
+               [-hashes LMHASH:NTHASH]
 
-CVE-2019-1040 scanner - Connects over SMB and attempts to authenticate with
-invalid NTLM packets. If accepted, target is vulnerable to the scanned
-vulnerability
-
-positional arguments:
-  target                [[domain/]username[:password]@]<targetName or address>
+NTLM scanner - Connects over SMB and attempts to authenticate with invalid
+NTLM packets. If accepted, target is vulnerable to the scanned vulnerability
 
 optional arguments:
   -h, --help            show this help message and exit
+  -target TARGET        [[domain/]username[:password]@]<targetName or address>
 
 connection:
   -target-file file     Use the targets in the specified file instead of the
@@ -44,7 +53,8 @@ connection:
                         Destination port to connect to SMB Server
   -vuln [scanned vulnerability]
                         The vulnerability to scan SMB Server on [CVE-2019-1019
-                        |CVE-2019-1040|CVE-2019-1166|CVE-2019-1338]
+                        |CVE-2019-1040|CVE-2019-1166|CVE-2019-1338|CVE-2020-14
+                        72]
 
 authentication:
   -hashes LMHASH:NTHASH
